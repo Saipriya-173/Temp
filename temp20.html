@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      let products=[
+        {id:1,name: 'P1',price:34},
+           {id:2,name: 'P2',price:50},
+            {id:3,name: 'P3',price:40},
+    ];
+    const cart={}
+    const obj={apple:4,mango:2};
+    const addToCart=(id)=>{
+        cart[id]=1;
+        showCart()
+    }
+    const showCart=()=>{
+        let str=""
+        products.map((value)=>{
+            str+=`<div>${value.id}-$</div>`
+        }
+        )}
+        // const test={}
+        // test["Jhon"]=45
+        // test["cathy"]=34
+        // test["sam"]=49
+        // console.log(test)
+
+
+    //     if(obj["apple"]){
+    //         obj["apple"]=obj["apple"]+1
+    //         console.log(obj["apple"])
+    //     }
+    //     divCart.innerHTML=obj["apple"]
+    // }
+//it is a funtion (arrow method)
+        let showProducts=()=>{
+            let str=""
+            products.forEach((value)=>{
+                str+=`<div>${value.id}-${value.name}-${value.price}-<button onclick="addToCart(${value.id})">Addtocart</button></div>`
+            })
+           divProducts.innerHTML=str
+        }
+    </script>
+    </head>
+    <body onload="showProducts()">
+<h1>MyStore</h1>
+<hr />
+<h3>products</h3>
+<div id="divProducts"></div>
+<h3>My Cart</h3>
+<div id="divCart"></div>
+    </body>
+</html>
